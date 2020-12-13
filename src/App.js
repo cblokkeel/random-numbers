@@ -21,8 +21,10 @@ class App extends Component {
   }
 
   getRandomInt = (min, max) => {
-    const generated = Math.floor((Math.random() * (max - min + 1))) + min
-    this.setState({ generated }) 
+    if (max > min) {
+      const generated = Math.floor((Math.random() * (max - min + 1))) + min
+      this.setState({ generated }) 
+    }
   }
 
   render() {
